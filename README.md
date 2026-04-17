@@ -1,5 +1,10 @@
 # local-rag
 
+[![PyPI version](https://img.shields.io/pypi/v/local-rag)](https://pypi.org/project/local-rag/)
+[![CI](https://github.com/dennisreichenberg/local-rag/actions/workflows/ci.yml/badge.svg)](https://github.com/dennisreichenberg/local-rag/actions/workflows/ci.yml)
+[![Python versions](https://img.shields.io/pypi/pyversions/local-rag)](https://pypi.org/project/local-rag/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 > Ask questions about your documents using local LLMs — no cloud, no API keys, your data stays on your machine.
 
 ```
