@@ -29,6 +29,7 @@ def embed_texts(
     except httpx.ConnectError as e:
         raise EmbedError(f"Cannot connect to Ollama at {base_url}") from e
     except httpx.HTTPStatusError as e:
-        raise EmbedError(f"Ollama embed error {e.response.status_code}: {e.response.text[:200]}") from e
+        msg = f"Ollama embed error {e.response.status_code}: {e.response.text[:200]}"
+        raise EmbedError(msg) from e
     except KeyError as e:
         raise EmbedError("Unexpected response from Ollama embed API") from e

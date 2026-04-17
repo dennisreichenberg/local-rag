@@ -200,7 +200,9 @@ def clear_cmd(yes: bool) -> None:
 
     from rich.prompt import Confirm
 
-    if not yes and not Confirm.ask("[red]Remove ALL documents from the store?[/red]", default=False):
+    if not yes and not Confirm.ask(
+        "[red]Remove ALL documents from the store?[/red]", default=False
+    ):
         console.print("[dim]Aborted.[/dim]")
         sys.exit(0)
 
