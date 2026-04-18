@@ -9,7 +9,6 @@ import pytest
 
 from local_rag.loader import LoadError, chunk_text, load_document, load_text
 
-
 # ---------------------------------------------------------------------------
 # load_text
 # ---------------------------------------------------------------------------
@@ -131,7 +130,6 @@ def test_load_pdf_read_error_raises_load_error():
 
 
 def test_load_pdf_missing_pypdf_raises_load_error():
-    original = sys.modules.get("pypdf")
     with patch.dict(sys.modules, {"pypdf": None}):
         from local_rag.loader import load_pdf
         with pytest.raises(LoadError, match="pypdf not installed"):

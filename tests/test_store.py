@@ -12,7 +12,9 @@ def db(tmp_path):
 
 
 def test_add_chunks_returns_added_count(db):
-    count = add_chunks(["hello world", "foo bar"], [[0.1, 0.2], [0.3, 0.4]], source="doc.txt", db_dir=db)
+    count = add_chunks(
+        ["hello world", "foo bar"], [[0.1, 0.2], [0.3, 0.4]], source="doc.txt", db_dir=db
+    )
     assert count == 2
 
 
@@ -40,7 +42,9 @@ def test_list_sources_returns_sorted_unique(db):
 
 
 def test_list_sources_no_duplicates_per_source(db):
-    add_chunks(["c1", "c2", "c3"], [[0.1, 0.2], [0.3, 0.4], [0.5, 0.6]], source="doc.txt", db_dir=db)
+    add_chunks(
+        ["c1", "c2", "c3"], [[0.1, 0.2], [0.3, 0.4], [0.5, 0.6]], source="doc.txt", db_dir=db
+    )
     sources = list_sources(db_dir=db)
     assert sources.count("doc.txt") == 1
 
